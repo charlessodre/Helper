@@ -246,3 +246,39 @@ def resize_image(image, width, height=None):
         img_resized = img.resize((width, height), Image.ANTIALIAS)
 
     return img_resized
+
+def get_current_hour():
+    """
+    Get string of current hour in format hh:mm:ss
+    :return: Return current hour in format hh:mm:ss
+    """
+    return time.strftime("%H:%M:%S")
+
+
+def get_current_date():
+    """
+    Get string of current date in format d/M/Y
+    :return: Return current date in format d/M/Y
+    """
+    return time.strftime("%d/%m/%Y")
+
+def get_current_date_hour():
+    """
+       Get string of current date in format d/M/Y hh:mm:ss
+       :return: Return current date in format d/M/Y hh:mm:ss
+       """
+    return time.strftime("%d/%m/%Y %H:%M:%S")
+
+def set_sleep(seconds):
+    """
+    Wait some seconds
+    :param seconds:
+    """
+    time.sleep(seconds)
+
+def get_hour():
+    """
+    Get string of current hour in format H
+    :return: Return current hour in format H
+    """
+    return time.strftime("%H")
