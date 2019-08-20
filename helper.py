@@ -20,6 +20,7 @@ def rename(name, newname):
         """
     os.rename(name, newname)
 
+
 def file_exists(path):
     """
     Test whether a file exists ou whether path is file.
@@ -27,6 +28,7 @@ def file_exists(path):
     :return: Returns True whether file exists ou False whether file not exists.
     """
     return os.path.isfile(path)
+
 
 def path_exists(path):
     """
@@ -107,8 +109,7 @@ def save_list_to_file(file_name, content_list, mode='a'):
             wb -Open for writing binary data
 
             """
-    save_file(file_name,  ['{}\n'.format(l) for l in content_list], mode)
-
+    save_file(file_name, ['{}\n'.format(l) for l in content_list], mode)
 
 
 def save_file(file_name, content, mode='a'):
@@ -247,7 +248,8 @@ def resize_image(image, width, height=None):
 
     return img_resized
 
-def get_current_hour():
+
+def get_current_hour_str():
     """
     Get string of current hour in format hh:mm:ss
     :return: Return current hour in format hh:mm:ss
@@ -255,19 +257,29 @@ def get_current_hour():
     return time.strftime("%H:%M:%S")
 
 
-def get_current_date():
+def get_current_date_str():
     """
     Get string of current date in format d/M/Y
     :return: Return current date in format d/M/Y
     """
     return time.strftime("%d/%m/%Y")
 
-def get_current_date_hour():
+
+def get_current_date_hour_str():
     """
        Get string of current date in format d/M/Y hh:mm:ss
        :return: Return current date in format d/M/Y hh:mm:ss
        """
     return time.strftime("%d/%m/%Y %H:%M:%S")
+
+
+def get_hour_str():
+    """
+    Get string of current hour in format H
+    :return: Return current hour in format H
+    """
+    return time.strftime("%H")
+
 
 def set_sleep(seconds):
     """
@@ -275,10 +287,3 @@ def set_sleep(seconds):
     :param seconds:
     """
     time.sleep(seconds)
-
-def get_hour():
-    """
-    Get string of current hour in format H
-    :return: Return current hour in format H
-    """
-    return time.strftime("%H")
